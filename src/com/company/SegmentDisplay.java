@@ -11,7 +11,6 @@ public class SegmentDisplay {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int test=Integer.parseInt(br.readLine());
         StringBuilder str=new StringBuilder("");
-
         while(test--!=0)
         {
             int count=0;
