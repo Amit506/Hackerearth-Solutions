@@ -7,15 +7,15 @@ import java.util.*;
 public class CapillaryGame {
 
 
-    public static  void main(String args[])throws IOException{
+    public static void main(String args[]) throws IOException {
 
-        try{
+        try {
 
             Scanner sc = new Scanner(System.in);
             int listSize = Integer.parseInt(sc.nextLine());
-            List<Integer>   list = new ArrayList<>(listSize);
+            List<Integer> list = new ArrayList<>(listSize);
             List<Integer> result = new ArrayList<>();
-            while (listSize-->0){
+            while (listSize-- > 0) {
                 list.add(sc.nextInt());
             }
             Stack<Integer> B = new Stack<>();
@@ -26,28 +26,26 @@ public class CapillaryGame {
             A.addAll(list);
 
 
-            while (!A.isEmpty()&&!B.isEmpty()) {
-                if(A.peek()>B.peek()){
+            while (!A.isEmpty() && !B.isEmpty()) {
+                if (A.peek() > B.peek()) {
                     result.add(1);
                     B.pop();
-                }else if(A.peek()<B.peek()){
+                } else if (A.peek() < B.peek()) {
                     A.pop();
                     result.add(2);
-                }else {
+                } else {
                     result.add(0);
-                    A.pop();B.pop();
+                    A.pop();
+                    B.pop();
                 }
-
-
-
 
 
             }
 
-           result.forEach((temp)->{
-               System.out.print(temp+" ");
-           });
-        }catch (Exception e){
+            result.forEach((temp) -> {
+                System.out.print(temp + " ");
+            });
+        } catch (Exception e) {
             System.out.println(e.toString());
         }
     }
